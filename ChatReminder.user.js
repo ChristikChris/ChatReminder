@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Paragon Chat Timing Reminder
 // @namespace    https://tampermonkey.net/paragon-chat-reminder
-// @version      1.5.3
-// @description  Reminds associates to update customers during chat cases in Paragon (5-minute cadence) + Patience quick-fill
-// @author       christik@ with a lot of help from Kiro
+// @version      1.5.4
+// @description  Reminds associates to update customers during chat cases in Paragon (warn 3 min / urgent 5 min) + Patience quick-fill
+// @author       christik@ with some from Kiro
 // @match        https://paragon-eu.amazon.com/*
 // @match        https://paragon-na.amazon.com/*
 // @match        https://paragon-fe.amazon.com/*
@@ -16,9 +16,9 @@
     'use strict';
 
     // ---------------- Config ----------------
-    // Production cadence: gentle reminder at 5 min, escalation at 7 min.
-    const REMIND_AT_MS  = 5 * 60 * 1000; // 5 min – ask customer for more time
-    const TIMEOUT_AT_MS = 7 * 60 * 1000; // 7 min – urgent reminder
+    // Production cadence: gentle reminder at 3 min, escalation at 5 min.
+    const REMIND_AT_MS  = 3 * 60 * 1000; // 3 min – ask customer for more time
+    const TIMEOUT_AT_MS = 5 * 60 * 1000; // 5 min – urgent reminder
     const TICK_MS       = 1000;
     const POSITION_MS   = 250;       // re-position box below input
 
